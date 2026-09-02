@@ -1,0 +1,41 @@
+/* /cabecalho */
+
+body {
+    background-color: #f4fafc; 
+}
+h1 {
+    color: #1e3a8a; 
+    margin-left: 1px;
+    font-size: 30px;
+    padding: 10px;
+    
+}
+
+
+    p {
+    font-family: verdana;
+    font-size: 20px;
+    color: #1f2937; 
+}
+/* ESTILO DE CLASSE */
+.seletor {
+    font-family: verdana;
+    font-size: 16px;
+    color: #b91c1c;
+    padding: 10px;
+    line-height: 1.5;
+}
+/* ESTILO DE ID */
+#formatacao {
+    font-family: verdana;
+    font-size: 16px;
+    color: #0369a1; 
+}
+/* ESTILO DE FONTE DO GOOGLE */
+h2 {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 20px;
+    color: #047857; 
+    font-weight: light;
+}
+

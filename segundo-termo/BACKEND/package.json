@@ -1,0 +1,25 @@
+{
+  "name": "2-termo-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exercícios introdutórios de Backend 1 em Node.js",
+  "main": "AULA1/app1.js",
+  "scripts": {
+    "vendas": "node AULA1/app5.js",
+    "imc": "node AULA2/imc.js",
+    "atividade-final": "node AULA3/aula_autonoma/atividade_final.js",
+    "test": "node --check AULA1/app1.js && node --check AULA1/app2.js && node --check AULA1/app3.js && node --check AULA1/app4.js && node --check AULA1/app5.js && node --check AULA2/imc.js && node --check AULA3/aula_autonoma/AULA01.js && node --check AULA3/aula_autonoma/AULA02.js && node --check AULA3/aula_autonoma/AULA03.js && node --check AULA3/aula_autonoma/AULA04.js && node --check AULA3/aula_autonoma/atividade_final.js"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "backend",
+    "estudos"
+  ],
+  "author": "Jhon Wensky Pierre",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

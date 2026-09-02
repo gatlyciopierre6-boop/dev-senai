@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Avatar de Nicolas Yuhei Nomi</title>
+  <desc id="desc">Avatar abstrato com as iniciais NN</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f766e"/><stop offset="1" stop-color="#164e63"/></linearGradient></defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)"/>
+  <circle cx="80" cy="62" r="28" fill="#bae6fd" opacity=".95"/>
+  <path d="M35 143c7-31 24-47 45-47s38 16 45 47" fill="#bae6fd" opacity=".95"/>
+  <text x="80" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#164e63">NN</text>
+</svg>
