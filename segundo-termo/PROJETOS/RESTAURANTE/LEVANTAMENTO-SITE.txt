@@ -1,0 +1,175 @@
+1. IDENTIDADE DO SITE
+--------------------------------------------------------------------------------
+Nome: Brasa Aurora
+Tipo: Restaurante & Reservas
+Estilo: Cozinha contemporanea, cardapio sazonal, reservas para grupos
+Local: Sao Paulo (limeira
+)
+Conceito: Cozinha de fogo / forno a lenha
+Descricao (meta): Brasa Aurora — cozinha contemporanea, cardapio sazonal e reservas para grupos em ambiente exclusivo.
+Titulo da pagina: Brasa Aurora — Restaurante & Reservas
+Idioma: pt-BR
+
+
+--------------------------------------------------------------------------------
+2. MENU DE NAVEGACAO
+--------------------------------------------------------------------------------
+- Cardapio
+- Grupos
+- Reservas
+- Contato
+Botao: Reservar mesa
+
+
+--------------------------------------------------------------------------------
+3. HERO (CAPA)
+--------------------------------------------------------------------------------
+Selo: Cozinha de fogo · Sao Paulo
+Titulo: Jantar a luz da brasa, reservas para quem chega em grupo.
+Texto: Ingredientes de temporada, forno a lenha e saloes privativos para confraternizacoes, jantares corporativos e celebracoes.
+Botoes: Fazer reserva | Ver cardapio
+
+
+--------------------------------------------------------------------------------
+4. A CASA (INTRODUCAO)
+--------------------------------------------------------------------------------
+Titulo: Uma mesa pensada para dois — ou para vinte.
+Texto: O Brasa Aurora une o ritmo de um restaurante a la carte com uma operacao dedicada a grupos. Voce escolhe o salao, o menu degustacao e o horario; nos cuidamos do servico, da mesa e do timing.
+
+
+--------------------------------------------------------------------------------
+5. CARDAPIO (TEMPORADA)
+--------------------------------------------------------------------------------
+Titulo da secao: O que sai do forno nesta temporada
+Aviso: Selecao rotativa. Informe restricoes alimentares no momento da reserva.
+
+Filtros: Tudo | Entradas | Principais | Sobremesas | Bebidas
+
+ENTRADAS
+- Tartare de peixe do dia ........ R$ 68
+  Citricos, azeite de dende defumado e chips de mandioca.
+
+- Pao de fermentacao lenta ....... R$ 28
+  Manteiga de ervas e geleia de pimenta biquinho.
+
+- Ostras grelhadas ............... R$ 86
+  Manteiga de algas, limao e pimenta-rosa.
+
+PRINCIPAIS
+- Polvo na brasa ................. R$ 142
+  Pure de inhame, molho de pimentao e oleo de coentro.
+
+- Costela curta 12h .............. R$ 158
+  Reducao de cafe, farofa de banana e vinagrete de jambu.
+
+- Gnocchi de mandioquinha ........ R$ 96
+  Funghi da estacao e queijo meia-cura tostado. Opcao vegetariana.
+
+SOBREMESAS
+- Chocolate e flor de sal ........ R$ 42
+  Ganache amarga, sorvete de leite queimado e crocante de cacau.
+
+- Abacaxi na brasa ............... R$ 38
+  Cachaca, hortela e creme de coco.
+
+BEBIDAS
+- Aurora Sour .................... R$ 36
+  Cachaca envelhecida, maracuja e clara vegetal.
+
+- Taca da casa ................... R$ 32
+  Rotativo — pergunte ao sommelier o rotulo da semana.
+
+
+--------------------------------------------------------------------------------
+6. EVENTOS DE GRUPOS
+--------------------------------------------------------------------------------
+Titulo: Saloes privativos, menu fechado e servico continuo
+Regras gerais:
+- A partir de 8 pessoas.
+- Confirme com 48 horas de antecedencia para grupos acima de 12.
+
+PACOTE 1 — Mesa do chef
+Capacidade: 8 a 12 pessoas
+Descricao: Menu degustacao de 5 tempos, harmonizacao opcional e mesa unica no salao principal.
+- Duracao media de 2h30
+- Menu vegetariano sob consulta
+
+PACOTE 2 — Salao Lareira (destaque)
+Capacidade: 13 a 24 pessoas
+Descricao: Espaco fechado, playlist propria e servico de vinho a parte. Ideal para aniversarios e jantares de equipe.
+- Menu compartilhado ou a la carte
+- Projetor e brinde incluso
+
+PACOTE 3 — Casa exclusiva
+Capacidade: ate 40 pessoas
+Descricao: Buyout do restaurante em almoco ou jantar. Briefing com o maitre e cardapio sob medida.
+- Minimo de consumo sob consulta
+- Equipe dedicada
+
+
+--------------------------------------------------------------------------------
+7. RESERVAS — REGRAS DE NEGOCIO
+--------------------------------------------------------------------------------
+Titulo: Garanta sua mesa — ou o salao inteiro
+Texto: Mesas para ate 7 pessoas sao confirmadas na hora. Grupos a partir de 8 passam por analise de disponibilidade e recebem retorno por e-mail.
+
+HORARIOS DE FUNCIONAMENTO
+Terça a quinta:  12h – 15h  ·  19h – 23h
+Sexta e sabado:  12h – 16h  ·  19h – 00h
+Domingo:         12h – 17h
+Segunda:         FECHADO
+
+Horarios disponiveis no formulario:
+12:00 | 12:30 | 13:00 | 19:00 | 19:30 | 20:00 | 20:30 | 21:00
+
+Tipos de reserva:
+- Mesa no salao
+- Evento de grupo (8+)
+- Casa exclusiva
+
+Ocasioes (quando e grupo):
+- Jantar corporativo
+- Aniversario
+- Confraternizacao
+- Outro
+
+Campos do formulario:
+- Nome completo (obrigatorio, minimo 3 caracteres)
+- E-mail (obrigatorio)
+- Telefone (obrigatorio, minimo 10 digitos)
+- Data (nao pode ser passado; nao aceita segunda-feira)
+- Horario
+- Pessoas (1 a 40; padrao 2)
+- Tipo de reserva
+- Ocasião (obrigatorio se grupo)
+- Observacoes (alergias, acessibilidade, preferencia de mesa — max 400 caracteres)
+
+Regras do sistema:
+- Ate 7 pessoas + tipo "mesa" = reserva CONFIRMADA na hora
+- 8 ou mais pessoas, tipo "grupo" ou "exclusivo" = PRE-RESERVA (retorno por e-mail)
+- Se o usuario escolhe 8+ pessoas com tipo "mesa", o sistema muda automaticamente para "grupo"
+- Casa exclusiva: minimo de 20 pessoas
+- Dica na tela: grupos a partir de 8 entram como pre-reserva ate confirmar o salao
+- Reservas ficam salvas no navegador (localStorage), chave: brasa-aurora-reservas
+
+
+--------------------------------------------------------------------------------
+8. CONTATO E ENDERECO (RODAPE)
+--------------------------------------------------------------------------------
+Nome: Brasa Aurora
+Endereco: Rua das Laranjeiras, 240 · Vila Madalena
+Cidade: Sao Paulo · SP
+E-mail: reservas@brasaaurora.com
+Telefone: (11) 3090-4410
+Horario resumido: Ter–dom, almoco e jantar
+Fechado: segundas
+Copyright: © [ano atual] Brasa Aurora. Estrutura inicial do projeto.
+
+--------------------------------------------------------------------------------
+9. TEXTOS CURTOS UTEIS (SLOGANS / FRASES)
+--------------------------------------------------------------------------------
+- Cozinha de fogo · Sao Paulo
+- Jantar a luz da brasa
+- Uma mesa pensada para dois — ou para vinte
+- O que sai do forno nesta temporada
+- Garanta sua mesa — ou o salao inteiro
