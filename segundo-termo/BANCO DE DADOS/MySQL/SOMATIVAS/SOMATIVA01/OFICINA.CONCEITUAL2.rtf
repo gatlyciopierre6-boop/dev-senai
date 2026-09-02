@@ -1,0 +1,309 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Atributo: \cf2\b0 ano\cf1\b 
+\par \cf0\b0 ano do veiculo
+\par varchar(4)
+\par 
+\par \cf1\b 002 - Atributo: \cf2\b0 ano\cf1\b 
+\par \cf0\b0 ano que o modelo foi lan\f1\'e7ado
+\par VARCHAR(4
+\par \f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 ano_fundacao\cf1\b 
+\par \cf0\b0 o ano que a marca foi fundada
+\par VARCHAR(4)
+\par 
+\par \cf1\b 004 - Atributo: \cf2\b0 cargo\cf1\b 
+\par \cf0\b0 cargo do funcionario
+\par VARCHAR(80) NOT NULL
+\par 
+\par \cf1\b 005 - Atributo: \cf2\b0 cartao\cf1\b 
+\par \cf0\b0 o tipo do cartao que o pagamento sera efetuado pelo cliente
+\par 
+\par \cf1\b 006 - Atributo: \cf2\b0 categoria\cf1\b 
+\par \cf0\b0 a categoria da pe\f1\'e7a
+\par  VARCHAR(60)
+\par \f0 
+\par \cf1\b 007 - Atributo: \cf2\b0 categoria\cf1\b 
+\par \cf0\b0 a categoria do modelo do carro
+\par VARCHAR(60) 
+\par \cf1\b 008 - Atributo: \cf2\b0 categoria\cf1\b 
+\par \cf0\b0 a categoria do servi\f1\'e7o
+\par VARCHAR(60)
+\par \f0 
+\par \cf1\b 009 - Entidade: \cf2\b0 clientes\cf1\b 
+\par \cf0\b0 informa\f1\'e7oes dos clientes. \f0 
+\par \cf1\b 010 - Atributo: \cf2\b0 cnpj\cf1\b 
+\par \cf0\b0 cnpj do fornecedor
+\par VARCHAR(18) NOT NULL UNIQUE
+\par 
+\par \cf1\b 011 - Atributo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 cpf do cliente
+\par varchar(14)not null
+\par 
+\par \cf1\b 012 - Atributo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 cpf do funcionario
+\par CHAR(11) UNIQUE
+\par 
+\par \cf1\b 013 - Atributo: \cf2\b0 credito\cf1\b 
+\par \cf0\b0 cartao de credito
+\par VARCHAR(5)
+\par 
+\par \cf1\b 014 - Atributo: \cf2\b0 data_admissao\cf1\b 
+\par \cf0\b0 a data de admissao do funcionario
+\par DATE NOT NULL
+\par 
+\par \cf1\b 015 - Atributo: \cf2\b0 data_entrada\cf1\b 
+\par \cf0\b0 a data da entrada da ordem de servi\f1\'e7o
+\par date not null
+\par \f0 
+\par \cf1\b 016 - Atributo: \cf2\b0 data_pagamento\cf1\b 
+\par \cf0\b0 a data que o pagamento foi efetuado
+\par  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+\par 
+\par \cf1\b 017 - Atributo: \cf2\b0 data_saida\cf1\b 
+\par \cf0\b0 a data que saiu o servi\f1\'e7o
+\par date null
+\par \f0 
+\par \cf1\b 018 - Atributo: \cf2\b0 debito\cf1\b 
+\par \cf0\b0 cartao de debito
+\par VARCHAR(5)
+\par 
+\par \cf1\b 019 - Atributo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 a descricao do servi\f1\'e7o
+\par VARCHAR(150)
+\par \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 duracao\cf1\b 
+\par \cf0\b0 a dura\f1\'e7ao do servi\'e7o
+\par VARCHAR(150) NOT NULL
+\par \f0 
+\par \cf1\b 021 - Atributo: \cf2\b0 email\cf1\b 
+\par \cf0\b0 email do fornecedor
+\par VARCHAR(255) NOT NULL UNIQUE
+\par 
+\par \cf1\b 022 - Atributo: \cf2\b0 email\cf1\b 
+\par \cf0\b0 email do cliente
+\par varchar(255)not null unique
+\par 
+\par \cf1\b 023 - Atributo: \cf2\b0 endereco\cf1\b 
+\par \cf0\b0 endere\f1\'e7o do cliente
+\par varchar(250)
+\par \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 endreco\cf1\b 
+\par \cf0\b0 endereco do fornercedor
+\par varchar(250)
+\par 
+\par \cf1\b 025 - Atributo: \cf2\b0 fabricante\cf1\b 
+\par \cf0\b0 fabricante da marca
+\par VARCHAR(60)
+\par 
+\par \cf1\b 026 - Entidade: \cf2\b0 fornecedores\cf1\b 
+\par \cf0\b0 as informa\f1\'e7oes dos fornecedores da oficina
+\par \f0 
+\par \cf1\b 027 - Entidade: \cf2\b0 funcionarios\cf1\b 
+\par \cf0\b0 os funcionarios da empresa
+\par 
+\par \cf1\b 028 - Atributo: \cf2\b0 fundador\cf1\b 
+\par \cf0\b0 fundador da marca
+\par varcahar(60)
+\par 
+\par \cf1\b 029 - Atributo: \cf2\b0 id_cliente\cf1\b 
+\par \cf0\b0 identificador do cliente
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par 
+\par \cf1\b 030 - Atributo: \cf2\b0 id_cliente\cf1\b 
+\par \cf0\b0 identificador do cliente
+\par FOREIGN KEY(id_cliente) REFERENCES clientes(id_cliente)
+\par 
+\par \cf1\b 031 - Atributo: \cf2\b0 id_fornecedores\cf1\b 
+\par \cf0\b0 identificador do do fornecedor
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par 
+\par \cf1\b 032 - Atributo: \cf2\b0 id_funcionario\cf1\b 
+\par \cf0\b0 identificador do funcionario
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par 
+\par \cf1\b 033 - Atributo: \cf2\b0 id_marca\cf1\b 
+\par \cf0\b0 identificador da marca
+\par FOREIGN KEY(id_marca) REFERENCES marcas(id_marcas)
+\par 
+\par \cf1\b 034 - Atributo: \cf2\b0 id_marcas\cf1\b 
+\par \cf0\b0 identificador da marca
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par 
+\par \cf1\b 035 - Atributo: \cf2\b0 id_modelos\cf1\b 
+\par \cf0\b0 identificador do modelo
+\par INT UNSIGNED AUTO_INCREMENT
+\par 
+\par \cf1\b 036 - Atributo: \cf2\b0 id_ordens_servicos\cf1\b 
+\par \cf0\b0 identificador de ordens de servic\f1\'e7os
+\par INT UNSIGNED AUTO_INCREMENT
+\par \f0 
+\par \cf1\b 037 - Atributo: \cf2\b0 id_os\cf1\b 
+\par \cf0\b0 identificador da orden de servi\f1\'e7o
+\par FOREIGN KEY(id_os) REFERENCES ordens_servicos(id_ordens_servicos)
+\par \f0 
+\par \cf1\b 038 - Atributo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 identificador de pagamento
+\par INT UNSIGNED AUTO_INCREMENT
+\par 
+\par \cf1\b 039 - Atributo: \cf2\b0 id_pe\f1\'e7as\cf1\b 
+\par \cf0\b0\f0 identificador de pe\f1\'e7as
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par \f0 
+\par \cf1\b 040 - Atributo: \cf2\b0 id_servicos\cf1\b 
+\par \cf0\b0 identificador do servi\f1\'e7o
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 id_veiculo\cf1\b 
+\par \cf0\b0 identificador do veiculo
+\par  FOREIGN KEY(id_veiculo) REFERENCES veiculos(id_veiculos)
+\par 
+\par \cf1\b 042 - Atributo: \cf2\b0 id_veiculo\cf1\b 
+\par \cf0\b0 identificador do veiculo
+\par FOREIGN KEY(id_veiculo) REFERENCES veiculos(id_veiculos) 
+\par \cf1\b 043 - Atributo: \cf2\b0 id_veiculos\cf1\b 
+\par \cf0\b0 identificador do veiculo
+\par INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+\par 
+\par \cf1\b 044 - Atributo: \cf2\b0 localizacao\cf1\b 
+\par \cf0\b0 a localiza\f1\'e7ao da pe\'e7a
+\par VARCHAR(100)
+\par \f0 
+\par \cf1\b 045 - Atributo: \cf2\b0 marca\cf1\b 
+\par \cf0\b0 a marca do veiculo
+\par varhar(60)
+\par 
+\par \cf1\b 046 - Entidade: \cf2\b0 marcas\cf1\b 
+\par \cf0\b0 marca do carro 
+\par \cf1\b 047 - Atributo: \cf2\b0 metodo_pagamento\cf1\b 
+\par \cf0\b0 o metodo que o pagamento sera efetuado pelo cliente
+\par  ENUM('cartao_credito', 'cartao_debito', 'pix', 'dinheiro') NOT NULL
+\par 
+\par \cf1\b 048 - Atributo: \cf2\b0 modelo\cf1\b 
+\par \cf0\b0 modelo do veiculo
+\par varchar(60)
+\par 
+\par \cf1\b 049 - Entidade: \cf2\b0 modelos\cf1\b 
+\par \cf0\b0 o modelo do veiculo 
+\par \cf1\b 050 - Atributo: \cf2\b0 motor\cf1\b 
+\par \cf0\b0 o tipo de motor do modelo
+\par VARCHAR(20)
+\par 
+\par \cf1\b 051 - Atributo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 nome do cliente
+\par varchar(120)not null
+\par 
+\par \cf1\b 052 - Atributo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 o nome da pe\f1\'e7a
+\par varchar(100) not null
+\par \f0 
+\par \cf1\b 053 - Atributo: \cf2\b0 nome_marca\cf1\b 
+\par \cf0\b0 nome da marca do veiculo
+\par VARCHAR(60) NOT NULL
+\par 
+\par \cf1\b 054 - Atributo: \cf2\b0 nome_modelo\cf1\b 
+\par \cf0\b0 o nome do modelo
+\par VARCHAR(60) NOT NULL
+\par 
+\par \cf1\b 055 - Entidade: \cf2\b0 ordens_servi\f1\'e7os\cf1\b 
+\par \cf0\b0\f0 as ordens de servi\f1\'e7os
+\par \f0 
+\par \cf1\b 056 - Entidade: \cf2\b0 pagamento\cf1\b 
+\par \cf0\b0 as informa\f1\'e7oes de pagamento dos clientes
+\par \f0 
+\par \cf1\b 057 - Atributo: \cf2\b0 pais_origem\cf1\b 
+\par \cf0\b0 o pais de origem da marca
+\par VARCHAR(150
+\par 
+\par \cf1\b 058 - Entidade: \cf2\b0 pe\f1\'e7as\cf1\b 
+\par \cf0\b0\f0 as informa\f1\'e7oes de pe\'e7as da oficina
+\par \f0 
+\par \cf1\b 059 - Atributo: \cf2\b0 pix\cf1\b 
+\par \cf0\b0 o pix \f1\'e9 um metodo de pagamento
+\par VARCHAR(5)
+\par \f0 
+\par \cf1\b 060 - Atributo: \cf2\b0 placa\cf1\b 
+\par \cf0\b0 a placa do veiculo
+\par varchar(20)
+\par 
+\par \cf1\b 061 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 062 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 063 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 064 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 065 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 066 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 067 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 068 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 069 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 070 - Atributo: \cf2\b0 quilometragem\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 071 - Atributo: \cf2\b0 razao_social\cf1\b 
+\par \cf0\b0 a razao social do fornecedor
+\par VARCHAR(150) NOT NULL
+\par 
+\par \cf1\b 072 - Atributo: \cf2\b0 salario\cf1\b 
+\par \cf0\b0 salario do funcionario
+\par  DECIMAL(10, 2) NOT NULL DEFAULT 0.00
+\par 
+\par \cf1\b 073 - Entidade: \cf2\b0 servicos\cf1\b 
+\par \cf0\b0 as informa\f1\'e7oes de servico da oficina
+\par \f0 
+\par \cf1\b 074 - Atributo: \cf2\b0 site\cf1\b 
+\par \cf0\b0 site da marca
+\par varchar(60)
+\par 
+\par \cf1\b 075 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status do servi\f1\'e7o
+\par VARCHAR(20) NOT NULL DEFAULT 'pendente'
+\par \f0 
+\par \cf1\b 076 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status do pagamento
+\par VARCHAR(20) NOT NULL DEFAULT 'pendente'
+\par 
+\par \cf1\b 077 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 os status de servi\f1\'e7os
+\par VARCHAR(20) NOT NULL DEFAULT 'pendente'
+\par \f0 
+\par \cf1\b 078 - Atributo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 o numero de telefone do fornecedor
+\par VARCHAR(20)
+\par 
+\par \cf1\b 079 - Atributo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 numero de telefone do cliente
+\par varchar(20) not null
+\par 
+\par \cf1\b 080 - Atributo: \cf2\b0 tipo\cf1\b 
+\par \cf0\b0 o tipo de pe\f1\'e7a
+\par VARCHAR(50
+\par \f0 
+\par \cf1\b 081 - Atributo: \cf2\b0 turno\cf1\b 
+\par \cf0\b0 o turno do funcionario
+\par VARCHAR(60)
+\par 
+\par \cf1\b 082 - Atributo: \cf2\b0 valor\cf1\b 
+\par \cf0\b0 o valor do servi\f1\'e7o
+\par DECIMAL(10, 2) NOT NULL
+\par \f0 
+\par \cf1\b 083 - Atributo: \cf2\b0 valor\cf1\b 
+\par \cf0\b0 valor que deve ser pago pelo cliente
+\par DECIMAL(10, 2) NOT NULL
+\par 
+\par \cf1\b 084 - Atributo: \cf2\b0 valor_total\cf1\b 
+\par \cf0\b0 o valor final do servi\f1\'e7o
+\par DECIMAL(10, 2) NOT NULL
+\par \f0 
+\par \cf1\b 085 - Entidade: \cf2\b0 veiculos\cf1\b 
+\par \cf0\b0 veiculo do cliente
+\par 
+\par 
+\par }
+ 

@@ -1,0 +1,53 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+
+.css {
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.banco-de-dados {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
