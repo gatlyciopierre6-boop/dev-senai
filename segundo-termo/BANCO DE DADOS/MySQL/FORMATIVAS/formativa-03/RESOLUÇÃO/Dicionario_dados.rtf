@@ -1,0 +1,253 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Campo: \cf2\b0 bairro\cf1\b 
+\par \cf0\b0 bairro VARCHAR(100) Bairro da entrega
+\par 
+\par \cf1\b 002 - Campo: \cf2\b0 cargo\cf1\b 
+\par \cf0\b0 cargo VARCHAR(50) Cargo exercido pelo funcion\f1\'e1rio.
+\par \f0 
+\par \cf1\b 003 - Campo: \cf2\b0 categoria\cf1\b 
+\par \cf0\b0 categoria VARCHAR(50) Categoria do produto.
+\par 
+\par \cf1\b 004 - Campo: \cf2\b0 cidade\cf1\b 
+\par \cf0\b0 cidade VARCHAR(100) Cidade da entrega.
+\par 
+\par \cf1\b 005 - Tabela: \cf2\b0 cliente+fidelidade\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 006 - Campo: \cf2\b0 codigo_transacao\cf1\b 
+\par \cf0\b0 codigo_transacao VARCHAR(100) C\f1\'f3digo da transa\'e7\'e3o do pagamento.
+\par \f0 
+\par \cf1\b 007 - Campo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 N\f1\'famero do Cadastro de Pessoa F\'edsica do funcion\'e1rio.
+\par \f0 
+\par \cf1\b 008 - Campo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 cpf CHAR(11) N\f1\'famero do Cadastro de Pessoa F\'edsica do cliente
+\par \f0 
+\par \cf1\b 009 - Campo: \cf2\b0 data_atualizacao\cf1\b 
+\par \cf0\b0 data_atualizacao DATETIME Data da \f1\'faltima atualiza\'e7\'e3o do estoque.
+\par \f0 
+\par \cf1\b 010 - Campo: \cf2\b0 data_cadastro\cf1\b 
+\par \cf0\b0 data_cadastro DATE Data em que o cliente foi cadastrado no sistema.
+\par 
+\par \cf1\b 011 - Campo: \cf2\b0 data_contratacao\cf1\b 
+\par \cf0\b0 Data em que o funcion\f1\'e1rio foi contratado pela empresa.
+\par \f0 
+\par \cf1\b 012 - Campo: \cf2\b0 data_pagamento\cf1\b 
+\par \cf0\b0 data_pagamento DATETIME Data e hora em que o pagamento foi realizado.
+\par 
+\par \cf1\b 013 - Campo: \cf2\b0 data_pedido\cf1\b 
+\par \cf0\b0 data_pedido DATETIME Data e hora em que o pedido foi realizado.
+\par 
+\par \cf1\b 014 - Campo: \cf2\b0 data_ultima_atualizacao\cf1\b 
+\par \cf0\b0 data_ultima_atualizacao DATETIME Data da \f1\'faltima atualiza\'e7\'e3o dos pontos de fidelidade
+\par \f0 
+\par \cf1\b 015 - Campo: \cf2\b0 delivery\cf1\b 
+\par \cf0\b0 delivery BOOLEAN Indica se o pedido ser\f1\'e1 realizado por delivery.
+\par \f0 
+\par \cf1\b 016 - Campo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 descricao VARCHAR(255) Descri\f1\'e7\'e3o do cliente.
+\par \f0 
+\par \cf1\b 017 - Campo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 descricao VARCHAR(255) Descri\f1\'e7\'e3o do produto.
+\par \f0 
+\par \cf1\b 018 - Campo: \cf2\b0 email\cf1\b 
+\par \cf0\b0 Endere\f1\'e7o de e-mail do cliente.
+\par VARCHAR(100)
+\par \f0 
+\par \cf1\b 019 - Campo: \cf2\b0 email\cf1\b 
+\par \cf0\b0 Endere\f1\'e7o de e-mail do funcion\'e1rio.
+\par VARCHAR(100)
+\par \f0 
+\par \cf1\b 020 - Campo: \cf2\b0 endereco_entrega\cf1\b 
+\par \cf0\b0 endereco_entrega VARCHAR(255) Endere\f1\'e7o onde o pedido ser\'e1 entregue
+\par \f0 
+\par \cf1\b 021 - Tabela: \cf2\b0 entrega\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 022 - Campo: \cf2\b0 forma_pagamento\cf1\b 
+\par \cf0\b0 forma_pagamento VARCHAR(30) Forma utilizada para realizar o pagamento
+\par 
+\par \cf1\b 023 - Tabela: \cf2\b0 funcionario\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 024 - Relacionamento: \cf2\b0 funcionario_entrega_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 025 - Campo: \cf2\b0 id_cliente\cf1\b 
+\par \cf0\b0 id_cliente INT Identificador \f1\'fanico do cliente.
+\par \f0 
+\par \cf1\b 026 - Campo: \cf2\b0 id_delivery\cf1\b 
+\par \cf0\b0 id_delivery INT Identificador \f1\'fanico da entrega.
+\par \f0 
+\par \cf1\b 027 - Campo: \cf2\b0 id_delivery\cf1\b 
+\par \cf0\b0 id_delivery INT Identificador \f1\'fanico da entrega.
+\par \f0 
+\par \cf1\b 028 - Campo: \cf2\b0 id_estoque_insumos\cf1\b 
+\par \cf0\b0 id_estoque_insumos INT Identificador \f1\'fanico do estoque de insumos.
+\par \f0 
+\par \cf1\b 029 - Campo: \cf2\b0 id_fidelidade\cf1\b 
+\par \cf0\b0 id_fidelidade INT Identificador \f1\'fanico do registro de fidelidade 
+\par \f0 
+\par \cf1\b 030 - Campo: \cf2\b0 id_funcionario\cf1\b 
+\par \cf0\b0 Identificador \f1\'fanico do funcion\'e1rio no sistema.
+\par \f0 
+\par \cf1\b 031 - Campo: \cf2\b0 id_funcionario\cf1\b 
+\par \cf0\b0 Identificador \f1\'fanico do funcion\'e1rio no sistema.
+\par \f0 
+\par \cf1\b 032 - Campo: \cf2\b0 id_item_pedido\cf1\b 
+\par \cf0\b0 id_item_pedido INT Identificador \f1\'fanico do item do pedido.
+\par \f0 
+\par \cf1\b 033 - Campo: \cf2\b0 id_item_pedido\cf1\b 
+\par \cf0\b0 id_item_pedido INT Identificador \f1\'fanico do item do pedido.
+\par \f0 
+\par \cf1\b 034 - Campo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 id_pagamento INT Identificador \f1\'fanico do pagamento.
+\par \f0 
+\par \cf1\b 035 - Campo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 id_pagamento INT Identificador \f1\'fanico do pagamento.
+\par \f0 
+\par \cf1\b 036 - Campo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 id_pagamento INT Identificador \f1\'fanico do pagamento.
+\par \f0 
+\par \cf1\b 037 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador do pedido.
+\par 
+\par \cf1\b 038 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador \f1\'fanico do pedido.
+\par \f0 
+\par \cf1\b 039 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador \f1\'fanico do pedido.
+\par \f0 
+\par \cf1\b 040 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador \f1\'fanico do pedido.
+\par \f0 
+\par \cf1\b 041 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador do pedido.
+\par 
+\par \cf1\b 042 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador \f1\'fanico do pedido.
+\par \f0 
+\par \cf1\b 043 - Campo: \cf2\b0 id_pedido\cf1\b 
+\par \cf0\b0 id_pedido INT Identificador \f1\'fanico do pedido.
+\par \f0 
+\par \cf1\b 044 - Campo: \cf2\b0 id_produto\cf1\b 
+\par \cf0\b0 id_produto INT Identificador do produto.
+\par 
+\par \cf1\b 045 - Campo: \cf2\b0 id_produto\cf1\b 
+\par \cf0\b0 id_produto INT Identificador \f1\'fanico do produto.
+\par \f0 
+\par \cf1\b 046 - Campo: \cf2\b0 id_produto\cf1\b 
+\par \cf0\b0 id_produto INT Identificador do produto.
+\par 
+\par \cf1\b 047 - Tabela: \cf2\b0 item_pedido\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 048 - Relacionamento: \cf2\b0 item_pedido_produto_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 049 - Campo: \cf2\b0 kg\cf1\b 
+\par \cf0\b0 unidade_medida VARCHAR(10) Quilograma.
+\par 
+\par \cf1\b 050 - Campo: \cf2\b0 localizacao\cf1\b 
+\par \cf0\b0 localizacao VARCHAR(100) Local onde o insumo est\f1\'e1 armazenado.
+\par \f0 
+\par \cf1\b 051 - Campo: \cf2\b0 ml\cf1\b 
+\par \cf0\b0 unidade_medida VARCHAR(10) Mililitro.
+\par 
+\par \cf1\b 052 - Campo: \cf2\b0 nivel\cf1\b 
+\par \cf0\b0 nivel VARCHAR(50) N\f1\'edvel de fidelidade do cliente
+\par \f0 
+\par \cf1\b 053 - Campo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 nome VARCHAR(100) Nome do produto.
+\par 
+\par \cf1\b 054 - Campo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 Nome completo do funcion\f1\'e1rio
+\par \f0 
+\par \cf1\b 055 - Campo: \cf2\b0 nome_insumo\cf1\b 
+\par \cf0\b0 nome_insumo VARCHAR(100) Nome do insumo.
+\par 
+\par \cf1\b 056 - Campo: \cf2\b0 nome_programa\cf1\b 
+\par \cf0\b0 ome_programa VARCHAR(100) Nome do programa de fidelidade.
+\par 
+\par \cf1\b 057 - Campo: \cf2\b0 numero\cf1\b 
+\par \cf0\b0 numero INT N\f1\'famero do endere\'e7o de entrega.
+\par \f0 
+\par \cf1\b 058 - Campo: \cf2\b0 observacao\cf1\b 
+\par \cf0\b0 observacao VARCHAR(255) Observa\f1\'e7\'f5es relacionadas ao pedido.
+\par  \f0 
+\par \cf1\b 059 - Tabela: \cf2\b0 pedido+pagamento+delivery\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 060 - Relacionamento: \cf2\b0 pedido+pagamento+delivery_entrega_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 061 - Relacionamento: \cf2\b0 pedido+pagamento_item_pedido_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 062 - Relacionamento: \cf2\b0 pedido_cliente_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 063 - Relacionamento: \cf2\b0 pedido_funcionario_1\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 064 - Campo: \cf2\b0 pontos_acumulados\cf1\b 
+\par \cf0\b0 pontos_acumulados INT Quantidade de pontos acumulados pelo cliente
+\par 
+\par \cf1\b 065 - Campo: \cf2\b0 pontos_fidelidade\cf1\b 
+\par \cf0\b0 pontos_fidelidade INT Quantidade de pontos de fidelidade acumulados pelo cliente.
+\par 
+\par \cf1\b 066 - Campo: \cf2\b0 preco_unitario\cf1\b 
+\par \cf0\b0 preco_unitario DECIMAL(10,2) Pre\f1\'e7o unit\'e1rio do produto.
+\par \f0 
+\par \cf1\b 067 - Campo: \cf2\b0 preco_unitario\cf1\b 
+\par \cf0\b0 preco_unitario DECIMAL(10,2) Pre\f1\'e7o unit\'e1rio do produto.
+\par \f0 
+\par \cf1\b 068 - Campo: \cf2\b0 presencial\cf1\b 
+\par \cf0\b0 presencial BOOLEAN Indica se o pedido foi realizado presencialmente.
+\par 
+\par \cf1\b 069 - Tabela: \cf2\b0 produto+estoque(insumos)\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 070 - Campo: \cf2\b0 quantidade\cf1\b 
+\par \cf0\b0 quantidade INT Quantidade do produto no pedido.
+\par 
+\par \cf1\b 071 - Campo: \cf2\b0 quantidade_atual\cf1\b 
+\par \cf0\b0 quantidade_atual DECIMAL(10,2) Quantidade atual do insumo.
+\par 
+\par \cf1\b 072 - Campo: \cf2\b0 quantidade_estoque\cf1\b 
+\par \cf0\b0 quantidade_estoque INT Quantidade dispon\f1\'edvel no estoque.
+\par \f0 
+\par \cf1\b 073 - Campo: \cf2\b0 quantidade_minima\cf1\b 
+\par \cf0\b0 DECIMAL(10,2) Quantidade m\f1\'ednima do insumo no estoque.
+\par \f0 
+\par \cf1\b 074 - Campo: \cf2\b0 salario\cf1\b 
+\par \cf0\b0 salario DECIMAL(10,2) Sal\f1\'e1rio do funcion\'e1rio.
+\par \f0 
+\par \cf1\b 075 - Campo: \cf2\b0 saldo_pontos\cf1\b 
+\par \cf0\b0 saldo_pontos INT Quantidade de pontos dispon\f1\'edveis para utiliza\'e7\'e3o.
+\par \f0 
+\par \cf1\b 076 - Campo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status VARCHAR(30) Situa\f1\'e7\'e3o atual do pedido.
+\par \f0 
+\par \cf1\b 077 - Campo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status VARCHAR(30) Status atual do produto.
+\par 
+\par \cf1\b 078 - Campo: \cf2\b0 status_entrega\cf1\b 
+\par \cf0\b0 status_entrega VARCHAR(30) Status atual da entrega
+\par 
+\par \cf1\b 079 - Campo: \cf2\b0 status_pagamento\cf1\b 
+\par \cf0\b0 status_pagamento VARCHAR(30) Status atual do pagamento.
+\par 
+\par \cf1\b 080 - Campo: \cf2\b0 subtotal\cf1\b 
+\par \cf0\b0 subtotal DECIMAL(10,2) Valor total do item do pedido.
+\par 
+\par \cf1\b 081 - Campo: \cf2\b0 taxa_entrega\cf1\b 
+\par \cf0\b0 taxa_entrega DECIMAL(10,2) Valor da taxa de entrega.
+\par 
+\par \cf1\b 082 - Campo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 N\f1\'famero de telefone utilizado para contato com o funcion\'e1rio.
+\par \f0 
+\par \cf1\b 083 - Campo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 telefone VARCHAR(20) N\f1\'famero de telefone do cliente.
+\par \f0 
+\par \cf1\b 084 - Campo: \cf2\b0 un\cf1\b 
+\par \cf0\b0 unidade_medida VARCHAR(10) Unidade.
+\par 
+\par \cf1\b 085 - Campo: \cf2\b0 valor\cf1\b 
+\par \cf0\b0 valor DECIMAL(10,2) Valor pago pelo cliente.
+\par 
+\par \cf1\b 086 - Campo: \cf2\b0 valor_total\cf1\b 
+\par \cf0\b0 valor_total DECIMAL(10,2) Valor total do pedido
+\par 
+\par 
+\par }
+ 
