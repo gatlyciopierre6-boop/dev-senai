@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:141E30,100:243B55&height=180&section=header&text=2º%20TERMO&fontSize=42&fontColor=FFFFFF&animation=fadeIn&fontAlignY=36&desc=Desenvolvimento%20de%20Sistemas&descAlignY=58&descSize=20" alt="Banner do projeto 2º Termo">
 
-# Desenvolvimento de Software — 2º Termo
+# Desenvolvimento de Sistemas — 2º Termo
 
 **Exercícios, projetos e aprendizados de Jhon Wensky Pierre**
 
