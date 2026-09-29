@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "Alicate",
+    "quantidade": 3,
+    "custoUnitario": 25.5
+  },
+  {
+    "nome": "Chave de fenda",
+    "quantidade": 5,
+    "custoUnitario": 18.75
+  }
+]
