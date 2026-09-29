@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --marrom: #3c1a0d;
+    --creme: #f5e3c8;
+    --laranja: #c85a1a;
+    --cinza: #c8c8c8;
+    --branco: #ffffff;
+    --texto: #2a140c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: var(--creme);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Esconde o ícone de imagem quebrada; retire esta regra quando as fotos existirem */
+figure img {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+    background-color: var(--marrom);
+    color: var(--creme);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+}
+
+.cabecalho h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.cabecalho nav ul {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.cabecalho nav a {
+    color: var(--creme);
+    font-size: 0.95rem;
+}
+
+.cabecalho nav a:hover {
+    color: var(--laranja);
+}
+
+/* ===== BANNER ===== */
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 8%;
+    background-color: var(--creme);
+}
+
+.banner-conteudo p:first-of-type {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.banner-conteudo h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+}
+
+.banner-conteudo p:last-of-type {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+}
+
+.banner-conteudo a {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+}
+
+.banner-imagem {
+    background-color: var(--cinza);
+    min-height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-imagem img {
+    width: 100%;
+    height: 230px;
+}
+
+.banner-imagem::before,
+.sobre figure::before,
+.card-cafe figure::before,
+.imagem-ambiente::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 90px solid #9a9a9a;
+    left: 18%;
+    bottom: 18%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner-imagem::after,
+.sobre figure::after,
+.card-cafe figure::after,
+.imagem-ambiente::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border: 2px dashed #8a8a8a;
+    border-radius: 50%;
+    right: 16%;
+    top: 16%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    grid-template-areas:
+        "cab img"
+        "txt img"
+        "btn img";
+    gap: 0.6rem 3rem;
+    padding: 3rem 8%;
+    border-top: 2px solid var(--marrom);
+    align-items: start;
+}
+
+.sobre figure {
+    grid-area: img;
+    background-color: var(--cinza);
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre figure img {
+    width: 100%;
+    height: 220px;
+}
+
+.sobre-cabecalho {
+    grid-area: cab;
+}
+
+.sobre-cabecalho p {
+    font-size: 0.85rem;
+}
+
+.sobre-cabecalho h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.sobre > p {
+    grid-area: txt;
+    max-width: 28rem;
+}
+
+.sobre > a {
+    grid-area: btn;
+    display: inline-block;
+    background-color: var(--branco);
+    color: var(--texto);
+    padding: 0.5rem 1.3rem;
+    width: fit-content;
+    margin-top: 0.6rem;
+    border: 1px solid #e8d5b8;
+}
+
+/* ===== CAFÉS ===== */
+.cafes {
+    padding: 2.5rem 8% 3.2rem;
+    border-top: 2px solid var(--marrom);
+}
+
+.sessao-cabecalho {
+    margin-bottom: 1.4rem;
+}
+
+.sessao-cabecalho p {
+    font-size: 0.85rem;
+}
+
+.sessao-cabecalho h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.lista-cafes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+}
+
+.card-cafe {
+    background-color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-cafe figure {
+    background-color: var(--cinza);
+    min-height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-cafe figure img {
+    width: 100%;
+    height: 150px;
+}
+
+.card-cafe h3,
+.card-cafe p,
+.card-cafe strong {
+    background-color: var(--branco);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.card-cafe h3 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding-top: 0.9rem;
+}
+
+.card-cafe p {
+    font-size: 0.9rem;
+    padding-top: 0.2rem;
+}
+
+.card-cafe strong {
+    display: block;
+    font-weight: 400;
+    padding-bottom: 0.9rem;
+    padding-top: 0.15rem;
+}
+
+/* ===== AMBIENTE ===== */
+.ambiente {
+    background-color: var(--marrom);
+    color: var(--branco);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas: "img txt";
+    gap: 3rem;
+    align-items: center;
+    padding: 3.2rem 8%;
+}
+
+.imagem-ambiente {
+    grid-area: img;
+    background-color: var(--cinza);
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagem-ambiente img {
+    width: 100%;
+    height: 240px;
+}
+
+.ambiente-conteudo {
+    grid-area: txt;
+}
+
+.ambiente-conteudo p:first-of-type {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.ambiente-conteudo h2 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.ambiente-conteudo p:last-of-type {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+    max-width: 26rem;
+}
+
+.ambiente-conteudo a {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.65rem 1.3rem;
+    font-size: 0.9rem;
+}
+
+/* ===== CONTATO ===== */
+.contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding: 3.2rem 8%;
+    background-color: var(--creme);
+}
+
+.contato-cabecalho::before {
+    content: "contato";
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+}
+
+.contato-cabecalho h2 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.contato-cabecalho p {
+    max-width: 22rem;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 320px;
+    margin-left: auto;
+}
+
+.contato form label {
+    background-color: var(--branco);
+    border: 1px solid var(--marrom);
+    padding: 0.7rem 1rem;
+    color: #555;
+}
+
+.contato form label[for="nome"] {
+    order: 1;
+}
+
+.contato form label[for="email"] {
+    order: 2;
+}
+
+.contato form label[for="mensagem"] {
+    order: 3;
+}
+
+.contato form label[for="enviar mensagem"] {
+    order: 4;
+    background-color: var(--laranja);
+    color: var(--branco);
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contato form label[for="enviar mensagem"]::after {
+    content: "Enviar mensagem";
+}
+
+.contato form input,
+.contato form textarea,
+.contato form button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--marrom);
+    background-color: var(--branco);
+    color: var(--texto);
+}
+
+.contato form button {
+    background-color: var(--laranja);
+    color: var(--branco);
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: var(--marrom);
+    color: var(--creme);
+    padding: 3rem 8% 2rem;
+}
+
+footer > p:first-of-type {
+    color: var(--laranja);
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+}
+
+footer nav a {
+    color: var(--creme);
+    font-size: 0.9rem;
+}
+
+footer nav a:hover {
+    color: var(--laranja);
+}
+
+footer > p:last-of-type {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 800px) {
+    .cabecalho,
+    .banner,
+    .sobre,
+    .cafes,
+    .ambiente,
+    .contato,
+    footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .banner,
+    .sobre,
+    .ambiente,
+    .contato {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+
+    .sobre figure,
+    .sobre-cabecalho,
+    .sobre > p,
+    .sobre > a,
+    .imagem-ambiente,
+    .ambiente-conteudo {
+        grid-area: auto;
+    }
+
+    .lista-cafes {
+        grid-template-columns: 1fr;
+    }
+
+    .contato form {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    footer nav ul,
+    footer > p:last-of-type {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
