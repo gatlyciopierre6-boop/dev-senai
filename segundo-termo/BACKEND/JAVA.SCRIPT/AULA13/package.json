@@ -1,0 +1,9 @@
+{
+  "name": "aula13-persistencia-json",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exercícios de persistência de dados em arquivos JSON com Node.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
