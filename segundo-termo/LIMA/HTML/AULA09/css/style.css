@@ -30,7 +30,6 @@ img {
     object-fit: cover;
 }
 
-/* Esconde o ícone de imagem quebrada; retire esta regra quando as fotos existirem */
 figure img {
     display: none;
 }
@@ -43,7 +42,6 @@ ul {
     list-style: none;
 }
 
-/* ===== CABEÇALHO ===== */
 .cabecalho {
     background-color: var(--marrom);
     color: var(--creme);
@@ -73,7 +71,6 @@ ul {
     color: var(--laranja);
 }
 
-/* ===== BANNER ===== */
 .banner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -154,7 +151,6 @@ ul {
     pointer-events: none;
 }
 
-/* ===== SOBRE ===== */
 .sobre {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -210,7 +206,6 @@ ul {
     border: 1px solid #e8d5b8;
 }
 
-/* ===== CAFÉS ===== */
 .cafes {
     padding: 2.5rem 8% 3.2rem;
     border-top: 2px solid var(--marrom);
@@ -279,7 +274,6 @@ ul {
     padding-top: 0.15rem;
 }
 
-/* ===== AMBIENTE ===== */
 .ambiente {
     background-color: var(--marrom);
     color: var(--branco);
@@ -333,7 +327,6 @@ ul {
     font-size: 0.9rem;
 }
 
-/* ===== CONTATO ===== */
 .contato {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -419,7 +412,6 @@ ul {
     width: fit-content;
 }
 
-/* ===== RODAPÉ ===== */
 footer {
     background-color: var(--marrom);
     color: var(--creme);
@@ -454,7 +446,6 @@ footer > p:last-of-type {
     text-align: right;
 }
 
-/* ===== RESPONSIVO ===== */
 @media (max-width: 800px) {
     .cabecalho,
     .banner,
