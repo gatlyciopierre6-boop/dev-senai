@@ -1,0 +1,79 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    /* direcao row e columns */
+    /* justify-content: flex-end;
+    justify-content: flex-start; */
+    /* justify-content: center; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly;     */
+
+/* Alinhamento e espacamento do conteudo vertical */
+/* align-items: flex-end;
+align-items: flex-start;
+align-items: center; */
+/* align-items: stretch; */
+
+}
+
+.cb-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.ban {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 8%;
+    background-color: aqua;
+}
+
+.ban-c, ban-img {
+flex: 1;
+
+}
+
+.ban-img {
+    margin: 0;
+}
+
+.ban-img img {
+    width: 100%;
+    display: block;
+}
+
+
+.lista-cartao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 23px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lista-cartao > li {
+    flex: 1;
+    min-width: 220px;
+    height: 200px;
+    background-color: rgb(109, 27, 216);
+}
+
+.cont {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 60px 8x;
+}
+
+.cont-c, .cont form {
+    flex: 1;
+
+}
