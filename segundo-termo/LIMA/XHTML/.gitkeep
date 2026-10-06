@@ -1,0 +1,5 @@
+flex-start: coloca os itens no começo.
+center: coloca os itens no centro.
+flex-end: coloca os itens no final.
+space-between: coloca o primeiro no começo e o último no final, distribuindo os outros entre eles.
+space-evenly: coloca espaços iguais entre todos os itens e nas extremidade
