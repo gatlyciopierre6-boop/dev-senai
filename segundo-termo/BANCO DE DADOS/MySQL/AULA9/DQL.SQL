@@ -188,3 +188,38 @@ FROM PEDIDO;
 
 SELECT NOME, COALESCE(TELEFONE, 'NAO INFORMADO') AS CONSTATO
 FROM CLIENTE;
+
+
+
+
+
+PARTE C - CÁLCULOS E AGRUPAMENTOS
+
+-- 11. Informe quantos produtos estão cadastrados.
+SELECT COUNT(*) AS Quantidade_Produtos FROM Produto;
+
+-- 12. Mostre menor preço, maior preço e preço médio dos produtos.
+SELECT MIN(Preco) AS Menor_preco,
+    MAX(Preco) AS Maior_preco,
+    AVG(Preco) AS Preco_medio
+FROM Produto;
+-- 13. Informe quantos clientes existem em cada cidade.
+
+SELECT Cidade,
+COUNT(*) AS Quantidade_Clientes
+FROM Cliente
+GROUP BY Cidade;
+
+-- 14. Mostre somente as cidades que possuem dois ou mais clientes.
+
+SELECT Cidade,
+    COUNT(*) AS Quantidade_Clientes
+FROM Cliente
+GROUP BY Cidade
+HAVING COUNT(*) >= 2;
+
+-- 15. Calcule o faturamento total considerando apenas pedidos FINALIZADOS.
+
+SELECT SUM(Valor_total) AS Faturamento
+FROM Pedido
+WHERE Status_Pedido = 'FINALIZADO';
