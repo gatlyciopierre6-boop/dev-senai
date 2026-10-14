@@ -212,3 +212,29 @@ WHERE ID_CATEGORIA = @categoria_teste;
 SELECT *
 FROM CATEGORIA
 WHERE ID_CATEGORIA = @categoria_teste;
+
+
+-- ============================================================
+
+-- 17. Tente inserir um produto usando uma categoria inexistente.
+INSERT INTO PRODUTO (NOME_PRODUTO, PRECO, ATIVO, ID_CATEGORIA)
+VALUES ('PRODUTO TESTE', 15.00, TRUE, 9999);
+
+-- 18. Tente cadastrar um cliente usando um e-mail que já existe.
+INSERT INTO CLIENTE (NOME, EMAIL, TELEFONE, CIDADE, ATIVO)
+VALUES ('CLIENTE DUPLICADO', 'JHON@EMAIL.COM',
+        '19999999020', 'LIMEIRA', TRUE);
+
+-- 19. Tente criar um pedido para um cliente inexistente.
+INSERT INTO PEDIDO (DATA_PEDIDO, STATUS_PEDIDO, VALOR_TOTAL, ID_CLIENTE)
+VALUES (NOW(), 'ABERTO', 0.00, 9999);
+
+-- 20. Identifique qual restrição foi responsável.
+-- Resposta:
+-- Questão 17: a chave estrangeira (FOREIGN KEY) impede
+-- usar uma categoria que não existe.
+-- Questão 18: a restrição UNIQUE impede cadastrar um e-mail
+-- que já existe, caso EMAIL tenha essa restrição.
+-- Questão 19: a chave estrangeira (FOREIGN KEY) impede
+-- criar um pedido para um cliente inexistente.
+
