@@ -75,31 +75,140 @@ WHERE ID_CATEGORIA = 9;
 
 -- 10. Altere o status do pedido criado para 'PREPARANDO'.
 
+-- SELECT de validação:
+SELECT *
+FROM PEDIDO
+WHERE ID_PEDIDO = @pedido_atividade;
+
+-- UPDATE:
+UPDATE PEDIDO
+SET STATUS_PEDIDO = 'PREPARANDO'
+WHERE ID_PEDIDO = @pedido_atividade;
+
+-- SELECT final:
+SELECT *
+FROM PEDIDO
+WHERE ID_PEDIDO = @pedido_atividade;
+
 
 -- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
---     Você pode calcular previamente com SELECT SUM(quantidade * preco_unitario).
+
+-- SELECT para calcular o total:
+SELECT SUM(QUANTIDADE * PRECO_UNITARIO) AS TOTAL
+FROM ITEM_PEDIDO
+WHERE ID_PEDIDO = @pedido_atividade;
+
+-- UPDATE:
+UPDATE PEDIDO
+SET VALOR_TOTAL = (
+    SELECT SUM(QUANTIDADE * PRECO_UNITARIO)
+    FROM ITEM_PEDIDO
+    WHERE ID_PEDIDO = @pedido_atividade
+)
+WHERE ID_PEDIDO = @pedido_atividade;
+
+-- SELECT final:
+SELECT *
+FROM PEDIDO
+WHERE ID_PEDIDO = @pedido_atividade;
 
 
--- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
+-- 12. Escolha um produto e faça uma exclusão lógica.
+
+-- SELECT de validação:
+SELECT *
+FROM PRODUTO
+WHERE ID_PRODUTO = @ID_PRODUTO_1;
+
+-- UPDATE:
+UPDATE PRODUTO
+SET ATIVO = FALSE
+WHERE ID_PRODUTO = @ID_PRODUTO_1;
+
+-- SELECT final:
+SELECT *
+FROM PRODUTO
+WHERE ID_PRODUTO = @ID_PRODUTO_1;
 
 
 -- PARTE C - DELETE
 
 -- 13. Crie um cliente de teste sem pedidos.
---     Depois localize e exclua apenas esse cliente.
+
+INSERT INTO CLIENTE (NOME, EMAIL, TELEFONE, CIDADE, ATIVO)
+VALUES ('CLIENTE TESTE', 'TESTE@EMAIL.COM', NULL, 'LIMEIRA', TRUE);
+
+SET @cliente_teste = LAST_INSERT_ID();
+
+-- Localize o cliente:
+SELECT *
+FROM CLIENTE
+WHERE ID_CLIENTE = @cliente_teste;
+
+-- Confira se não possui pedidos:
+SELECT *
+FROM PEDIDO
+WHERE ID_CLIENTE = @cliente_teste;
+
+-- SELECT de validação:
+SELECT *
+FROM CLIENTE
+WHERE ID_CLIENTE = @cliente_teste;
+
+-- DELETE:
+DELETE FROM CLIENTE
+WHERE ID_CLIENTE = @cliente_teste;
+
+-- SELECT final:
+SELECT *
+FROM CLIENTE
+WHERE ID_CLIENTE = @cliente_teste;
 
 
 -- 14. Tente excluir um cliente da base original que possua pedidos.
---     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
+
+-- SELECT de validação:
+SELECT *
+FROM CLIENTE
+WHERE ID_CLIENTE = 1;
+
+SELECT *
+FROM PEDIDO
+WHERE ID_CLIENTE = 1;
+
+-- DELETE comentado após o teste:
+-- DELETE FROM CLIENTE WHERE ID_CLIENTE = 1;
+
 -- Resultado observado:
+-- Erro de chave estrangeira (FOREIGN KEY).
+-- O cliente possui pedidos associados e não pode ser excluído.
 
 
--- 15. Explique em comentário por que a FK bloqueou a exclusão.
+-- 15. Explique por que a FK bloqueou a exclusão.
+
 -- Resposta:
+-- A chave estrangeira impede excluir um cliente que possui
+-- pedidos vinculados. Isso mantém a integridade dos dados
+-- e evita que os pedidos fiquem sem um cliente associado.
 
 
--- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+-- 16. Crie uma categoria temporária e remova-a.
 
+INSERT INTO CATEGORIA (NOME)
+VALUES ('Excluir Depois');
 
+SET @categoria_teste = LAST_INSERT_ID();
 
-SELECT * FROM PRODUTO;
+-- SELECT de validação:
+SELECT *
+FROM CATEGORIA
+WHERE ID_CATEGORIA = @categoria_teste;
+
+-- DELETE:
+DELETE FROM CATEGORIA
+WHERE ID_CATEGORIA = @categoria_teste;
+
+-- SELECT final:
+SELECT *
+FROM CATEGORIA
+WHERE ID_CATEGORIA = @categoria_teste;
