@@ -19,38 +19,59 @@ auto-fit,
 minmax(220px, 1fr)
 ) */
 
-/* EX1 */
-/* .lab-grid {
-    display: grid;
-     grid-template-columns: repeat(2, 2fr);
-    gap: 40px;
+
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 
-/* EX2 */
-/* .lab-grid {
-    display: grid;
-     grid-template-columns: repeat(3, 2fr);
-    gap: 40px;
-} */ 
-
-/* EX3 */
-/* .lab-grid {
-    grid-template-columns: 2fr 1fr;
-} */
-
-
-/* 
 
 
 
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 
 
 
+.grade {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
 
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
 
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
+@media (max-width: 768px) {
+  .grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (max-width: 480px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
+}
 
-
-
-*/
+.grade {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 10px;
+}
