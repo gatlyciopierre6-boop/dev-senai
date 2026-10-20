@@ -19,55 +19,49 @@ auto-fit,
 minmax(220px, 1fr)
 ) */
 
-
-.grade {
+/* EX1 */
+.lab-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
-
-
-
-
-.grade {
+/* EX2 */
+.lab-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
-
-
-
-.grade {
+/* EX3 */
+.lab-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 10px;
 }
-
-.grade {
+/* EX4 */
+.lab-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-
-.grade {
+/* EX5 */
+.lab-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-
 @media (max-width: 768px) {
-  .grade {
+  .lab-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .grade {
+  .lab-grid {
     grid-template-columns: 1fr;
   }
 }
-
-.grade {
+/* EX6 */
+.lab-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
