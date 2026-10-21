@@ -135,17 +135,36 @@ WHERE P.STATUS_PEDIDO = 'FINALIZADO'
 GROUP BY C.ID_CLIENTE, C.NOME
 ORDER BY TOTAL_COMPRADO ASC;
 
-
 -- 22. Mostre a quantidade de produtos e o preço médio de cada categoria.
+SELECT CA.NOME AS CATEGORIA, COUNT(P.ID_PRODUTO) AS QTDE_PRODUTOS, AVG(P.PRECO) AS PRECO_MEDIO
+FROM CATEGORIA AS CA
+LEFT JOIN PRODUTO AS P ON CA.ID_CATEGORIA = P.ID_CATEGORIA
+GROUP BY CA.ID_CATEGORIA, CA.NOME;
 
 
 -- 23. Descubra quais produtos possuem preço superior ao preço médio geral.
-
+SELECT NOME_PRODUTO, PRECO
+FROM PRODUTO
+WHERE PRECO > (SELECT AVG(PRECO)
+FROM PRODUTO)
+ORDER BY PRECO ASC;
 
 -- 24. Classifique os produtos como Econômico, Intermediário ou Premium.
 --     Defina e informe suas faixas de preço.
-
+SELECT NOME_PRODUTO, PRECO, CASE 
+    WHEN PRECO < 9.00 THEN 'ECONOMICO' 
+    WHEN PRECO < 17.00 THEN 'INTERMEDIARIO' 
+    ELSE  'PREMIUM'
+END AS CLASSIFICACAO
+FROM PRODUTO 
+ORDER BY PRECO;
 
 -- 25. CONSULTA AUTORAL
 -- Pergunta de negócio:
 --
+
+
+
+
+-- CONSULTAS
+SELECT * FROM categoria
