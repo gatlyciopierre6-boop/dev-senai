@@ -91,3 +91,61 @@ HAVING COUNT(*) >= 2;
 SELECT SUM(Valor_total) AS Faturamento
 FROM Pedido
 WHERE Status_Pedido = 'FINALIZADO';
+
+-- 16. Liste cada pedido exibindo id, data, nome do cliente, status e valor total.
+SELECT P.ID_Pedido, P.Data_Pedido, C.Nome AS Nome_Cliente,
+P.Status_Pedido, P.Valor_total
+FROM Pedido P
+INNER JOIN Cliente C 
+ON P.ID_Cliente = C.ID_Cliente;
+-- 17. Liste cada produto acompanhado do nome de sua categoria.
+SELECT P.Nome_Produto, C.
+FROM Produto P
+INNER JOIN Categoria C
+ON P.ID_PRODUTO = C.ID_Categoria;
+
+-- 18. Gere um relatório dos itens vendidos: pedido, produto, quantidade,
+--     preço unitário e subtotal.
+
+-- 19. Mostre todos os clientes, inclusive aqueles que nunca fizeram pedidos.
+SELECT C.NOME, P.ID_PEDIDO, P.DATA_PEDIDO
+FROM CLIENTE AS C
+LEFT JOIN PEDIDO AS P
+ON P.ID_CLIENTE = C.ID_CLIENTE
+ORDER BY C.NOME;
+
+
+-- 20. Liste apenas os clientes que nunca fizeram pedidos.
+SELECT C.ID_CLIENTE, C.NOME
+FROM CLIENTE AS C
+LEFT JOIN PEDIDO AS P
+ON P.ID_CLIENTE = C.ID_CLIENTE
+WHERE P.ID_PEDIDO IS NULL;
+
+
+-- PARTE E - DESAFIO GERENCIAL
+
+-- 21. Informe quantos pedidos FINALIZADOS cada cliente realizou e quanto
+--     cada cliente gastou. Ordene do maior gasto para o menor.
+SELECT C.NOME AS CLIENTE, COUNT(P.ID_PEDIDO) AS QTDE_PEDIDOS, SUM(P.VALOR_TOTAL) AS TOTAL_COMPRADO
+FROM CLIENTE AS C
+INNER JOIN PEDIDO AS P
+ON P.ID_CLIENTE = C.ID_CLIENTE
+WHERE P.STATUS_PEDIDO = 'FINALIZADO'
+GROUP BY C.ID_CLIENTE, C.NOME
+ORDER BY TOTAL_COMPRADO ASC;
+
+
+-- 22. Mostre a quantidade de produtos e o preço médio de cada categoria.
+
+
+-- 23. Descubra quais produtos possuem preço superior ao preço médio geral.
+
+
+-- 24. Classifique os produtos como Econômico, Intermediário ou Premium.
+--     Defina e informe suas faixas de preço.
+
+
+-- 25. CONSULTA AUTORAL
+-- Pergunta de negócio:
+--
