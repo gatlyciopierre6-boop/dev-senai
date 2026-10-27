@@ -3,10 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
+background-color: black;
 }
 
 .cabecalho h1 {
     font-size: 28px;
+    color: white;
 }
 
 .cabecalho ul {
@@ -20,6 +22,7 @@
     align-items: center;
     gap: 40px;
     padding: 60px 8%;
+    background-color: #101225;
 }
 
 .banner-imagem {
@@ -27,30 +30,10 @@
     background-color: #c8c8c8;
 }
 
+.banner h1{
+    color: white;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.rodape {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
+.banner p{
+    color: white;
 }
