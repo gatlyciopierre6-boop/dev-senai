@@ -1,39 +1,316 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
 .cabecalho {
+    background: #080808;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-background-color: black;
+    border-bottom: 2px solid #e63939;
 }
 
-.cabecalho h1 {
-    font-size: 28px;
-    color: white;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span,
+.banner h1 span,
+.titulo-secao h2 span,
+.hoje h2 span,
+.sobre h2 span {
+    color: #e63939;
 }
 
 .cabecalho ul {
     display: flex;
-    gap: 30px;
+    list-style: none;
+    gap: 20px;
+}
+
+.cabecalho nav a:hover,
+.redes a:hover {
+    color: #e63939;
 }
 
 .banner {
+    padding: 60px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    padding: 60px 8%;
-    background-color: #101225;
+}
+
+.banner-conteudo {
+    width: 55%;
+}
+
+.destaque {
+    color: #e63939;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.banner h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    color: #bdbdbd;
+    margin-bottom: 25px;
 }
 
 .banner-imagem {
+    width: 40%;
+}
+
+.banner-imagem img,
+.hoje-imagem img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.botao {
+    display: inline-block;
+    background: #e63939;
+    padding: 12px 25px;
+    border: 2px solid #e63939;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background: transparent;
+    color: #e63939;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.titulo-secao h2,
+.hoje h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.titulo-secao p:last-child,
+.filme-conteudo p:last-child,
+.personagem p,
+.hoje-conteudo p:not(.destaque),
+.sobre p:last-child {
+    color: #bdbdbd;
+}
+
+.classicos,
+.herois {
+    padding: 70px 8%;
+}
+
+.classicos {
+    background: #151515;
+}
+
+.filmes,
+.personagens {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.filme,
+.personagem {
+    background: #1c1c1c;
+    width: 30%;
+    min-width: 230px;
+    border: 1px solid #303030;
+    border-radius: 8px;
+}
+
+.filme img {
+    width: 100%;
+    height: 300px;
+}
+
+.filme-conteudo,
+.personagem-conteudo {
+    padding: 20px;
+}
+
+.ano {
+    color: #e63939;
+    font-size: 13px;
+}
+
+.filme h3,
+.personagem h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.personagem img {
+    width: 100%;
+    height: 250px;
+}
+
+.hoje {
+    padding: 70px 8%;
+    background: #171717;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hoje-imagem,
+.hoje-conteudo {
     width: 50%;
-    background-color: #c8c8c8;
 }
 
-.banner h1{
-    color: white;
+.hoje-conteudo p:not(.destaque) {
+    margin-bottom: 25px;
 }
 
-.banner p{
-    color: white;
+.fita {
+    padding: 60px 8%;
+    text-align: center;
+    background: #080808;
 }
+
+.fita h2 {
+    color: #e63939;
+    font-size: 70px;
+    margin: 15px 0;
+}
+
+.fita p:last-child {
+    color: #bdbdbd;
+}
+
+.sobre {
+    padding: 60px 8%;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.sobre h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.rodape {
+    padding: 35px 8%;
+    text-align: center;
+    background: #080808;
+    border-top: 2px solid #e63939;
+}
+
+.rodape p {
+    color: #bdbdbd;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.rodape .copyright {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+@media (max-width: 800px) {
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabecalho ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .filme,
+    .personagem {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner,
+    .hoje {
+        flex-direction: column;
+        padding: 40px 6%;
+    }
+
+    .banner-conteudo,
+    .banner-imagem,
+    .hoje-imagem,
+    .hoje-conteudo {
+        width: 100%;
+    }
+
+    .classicos,
+    .herois,
+    .sobre {
+        padding: 45px 6%;
+    }
+
+    .filme,
+    .personagem {
+        width: 100%;
+    }
+
+    .filme img {
+        height: auto;
+    }
+
+    .titulo-secao h2,
+    .hoje h2 {
+        font-size: 28px;
+    }
+
+    .fita h2 {
+        font-size: 50px;
+    }
+
+    .redes {
+        flex-wrap: wrap;
+    }
+    }
