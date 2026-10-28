@@ -1,3 +1,4 @@
+-- Active: 1788351694370@@127.0.0.1@3306@biblioteca_som2_pierre
 -- =====================================================================
 -- FASE 1 - DDL: CRIACAO E ESTRUTURA
 -- =====================================================================
@@ -111,7 +112,7 @@ FROM LIVRO
 WHERE ANO_PUBLICACAO >= 2020;
 
 INSERT INTO USUARIO (ID_USUARIO, NOME, EMAIL, TELEFONE, ATIVO)
-VALUES (5, 'USUARIO TESTE', 'TESTE@EMAIL.COM', NULL, TRUE);
+VALUES (5, 'bruno moraes', 'moraes@EMAIL.COM', NULL, TRUE);
 
 DELETE FROM USUARIO
 WHERE ID_USUARIO = 5;
@@ -185,3 +186,51 @@ FROM USUARIO U
 LEFT JOIN EMPRESTIMO E ON E.ID_USUARIO = U.ID_USUARIO
 GROUP BY U.ID_USUARIO, U.NOME
 ORDER BY QTD_EMPRESTIMOS DESC;
+
+-- =====================================================================
+-- FASE 4 - : TCL, TRANSAÇÕES E INTEGRIDADE
+-- =====================================================================
+
+START TRANSACTION
+INSERT INTO EMPRESTIMO (ID_EMPRESTIMO, DATA_EMPRESTIMO, DATA_PREVISTA, DATA_DEVOLUCAO, STATUS_EMPRESTIMO, ID_USUARIO, ID_LIVRO) VALUES
+(5, '2026-10-20 10:00:00', '2026-11-10', NULL, 'DEVOLVIDO', 6, 8),
+COMMIT;
+
+
+--22
+START TRANSACTION;
+UPDATE LIVRO
+SET QUANTIDADE_DISPONIVEL = 14
+WHERE ID_LIVRO=1;
+ROLLBACK;
+
+--23
+START TRANSACTION;
+UPDATE LIVRO
+SET QUANTIDADE_DISPONIVEL = 23
+WHERE ID_LIVRO = 2;
+
+SAVEPOINT REAJUSTE_LIVROS;
+
+UPDATE LIVRO
+SET QUANTIDADE_DISPONIVEL =13
+WHERE ID_LIVRO = 3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--========================================
+SELECT * FROM LIVRO;  -- CONSULTAS
+--========================================
