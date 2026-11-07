@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../img/LogoInicialSemFundo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/comum.css">
+    <link rel="stylesheet" href="reserva.css">
+
+    <title>Reserva de mesa | Capiva-Pizza</title>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho-principal">
+        <a href="../home/index.html" class="logo">
+            <img src="../img/LogoPizza.png" alt="Capiva-Pizza — página inicial" width="90" height="90">
+        </a>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../cardapio/cardapio.html">Cardápio</a></li>
+                <li><a href="../jonass/finalizacao_pedido.html">Detalhe dos pratos</a></li>
+                <li><a href="../reserva/index.html" aria-current="page">Reserva de mesa</a></li>
+                <li><a href="../contato/index.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="reserva-topo">
+            <div class="reserva-texto">
+                <p class="subtitulo">Feito para compartilhar</p>
+                <h1>Reserve sua mesa</h1>
+                <p>
+                    Escolha a data, o horário e a quantidade de pessoas.
+                    Funcionamos de terça a domingo, das 18h às 23h.
+                </p>
+                <a href="#formulario" class="botao">Reservar agora</a>
+            </div>
+
+            <figure class="reserva-imagem">
+                <img src="../img/mascote.jpg" alt="Mascote da Capiva-Pizza: uma capivara cozinheira comendo pizza" width="320" height="320">
+            </figure>
+        </section>
+
+        <section id="formulario" class="reserva-formulario">
+            <h2>Dados da reserva</h2>
+
+            <form id="form-reserva" novalidate>
+
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
+                    <small class="erro" id="erro-nome"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(19) 98123-6776" autocomplete="tel" inputmode="tel" required>
+                    <small class="erro" id="erro-telefone"></small>
+                </div>
+
+                <div class="duas-colunas">
+                    <div class="campo">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" name="data" required>
+                        <small class="erro" id="erro-data"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="horario">Horário</label>
+                        <input type="time" id="horario" name="horario" min="18:00" max="23:00" step="900" required>
+                        <small class="erro" id="erro-horario"></small>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="pessoas">Quantidade de pessoas</label>
+                    <input type="number" id="pessoas" name="pessoas" min="1" max="20" value="2" inputmode="numeric" required>
+                    <small class="erro" id="erro-pessoas"></small>
+                </div>
+
+                <button type="submit" class="botao">Solicitar reserva</button>
+
+                <div id="resultado" class="resultado" role="status" hidden></div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="rodape">
+        <a href="../home/index.html" class="logo-rodape">
+            <img src="../img/LogoPizza.png" alt="Capiva-Pizza" width="120" height="120">
+        </a>
+
+        <article class="telefone">
+            <p><a href="tel:+5519981236776">+55 (19) 98123-6776</a></p>
+        </article>
+
+        <nav aria-label="Redes sociais">
+            <ul class="redes-sociais">
+                <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                <li><a href="https://wa.me/5519981236776" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a></li>
+            </ul>
+        </nav>
+
+        <p class="direitos">© 2026 Capiva-Pizza. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="reserva.js"></script>
+</body>
+
+</html>

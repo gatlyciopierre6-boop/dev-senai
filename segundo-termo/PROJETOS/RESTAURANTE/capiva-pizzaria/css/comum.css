@@ -1,0 +1,216 @@
+/* ==================================================
+   ESTILO COMUM — mesmo tema da Home, Cardápio e Detalhes
+   (usado pelas páginas Contato e Reserva)
+   Paleta: bordô #790D0D · vinho #5C0808 · mostarda #C49A18
+           fundo #1B0505 · creme #F4EAD5
+================================================== */
+
+:root {
+    --bordo: #790D0D;
+    --vermelho-escuro: #5C0808;
+    --mostarda: #C49A18;
+    --fundo: #1B0505;
+    --creme: #F4EAD5;
+    --creme-claro: #FFFAF0;
+    --creme-escuro: #D8CBB2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--creme);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--mostarda);
+    outline-offset: 3px;
+}
+
+/* CABEÇALHO */
+.cabecalho-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 3%;
+    background-color: var(--bordo);
+    border-bottom: 3px solid var(--mostarda);
+}
+
+.logo img {
+    width: auto;
+    height: 84px;
+    max-width: 100%;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--creme);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+    color: var(--mostarda);
+}
+
+/* BOTÕES */
+.botao {
+    display: inline-block;
+    background-color: var(--mostarda);
+    color: var(--fundo);
+    padding: 13px 26px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.botao:hover {
+    background-color: var(--bordo);
+    color: var(--creme);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 20px -8px rgba(196, 154, 24, 0.35);
+}
+
+.botao:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* RODAPÉ */
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 6%;
+    background-color: var(--bordo);
+    border-top: 3px solid var(--mostarda);
+    color: var(--creme);
+    text-align: center;
+}
+
+.logo-rodape img {
+    width: auto;
+    height: 120px;
+    max-width: 100%;
+    display: block;
+}
+
+.telefone a {
+    color: var(--creme);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.telefone a:hover {
+    color: var(--mostarda);
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    list-style: none;
+}
+
+.redes-sociais a {
+    color: var(--fundo);
+    background-color: var(--mostarda);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.redes-sociais a:hover {
+    background-color: var(--creme);
+}
+
+.direitos {
+    font-size: 16px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .cabecalho-principal {
+        flex-direction: column;
+        padding: 12px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        height: 72px;
+    }
+
+    .menu {
+        gap: 14px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .direitos {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

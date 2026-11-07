@@ -1,0 +1,217 @@
+/* Página de Contato — usa o tema de ../css/comum.css */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 60px;
+}
+
+main section + section {
+    margin-top: 56px;
+}
+
+main h1,
+main h2 {
+    color: var(--mostarda);
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+main h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+}
+
+main h1::after,
+main h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 12px auto 0;
+    background: var(--bordo);
+    border-radius: 2px;
+}
+
+/* Sobre nós */
+#sobre figure {
+    margin: 0 0 26px;
+}
+
+#sobre figure img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid var(--mostarda);
+    background: linear-gradient(135deg, var(--vermelho-escuro), var(--fundo));
+}
+
+#sobre figure img.sem-foto {
+    object-fit: contain;
+    padding: 30px;
+}
+
+#sobre figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    color: var(--mostarda);
+}
+
+.textoSobre {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.textoSobre p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.textoSobre p:first-child::first-letter {
+    font-size: 1.4em;
+    color: var(--mostarda);
+}
+
+/* Informações de contato */
+.descricaoContato,
+.descricaoMensagem {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-style: normal;
+}
+
+.contato-item {
+    flex: 1 1 280px;
+    max-width: 320px;
+    background-color: var(--creme);
+    color: var(--fundo);
+    border-radius: 14px;
+    border-top: 5px solid var(--mostarda);
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+
+.contato-item h3 {
+    color: var(--bordo);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.contato-item p,
+.contato-item a {
+    color: var(--fundo);
+    font-size: 0.98rem;
+    text-decoration: none;
+}
+
+.contato-item a {
+    font-weight: bold;
+    border-bottom: 1px dotted var(--bordo);
+}
+
+.contato-item a:hover {
+    color: var(--bordo);
+}
+
+/* Formulário */
+#form-contato {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px;
+    background-color: var(--creme);
+    color: var(--fundo);
+    border-radius: 16px;
+    border-top: 5px solid var(--mostarda);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group + .form-group {
+    margin-top: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--vermelho-escuro);
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--mostarda);
+    border-radius: 8px;
+    background: var(--creme-claro);
+    color: var(--fundo);
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--bordo);
+}
+
+#form-contato button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--bordo);
+    color: var(--creme);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#form-contato button[type="submit"]:hover {
+    background: var(--mostarda);
+    color: var(--fundo);
+}
+
+#ok {
+    max-width: 640px;
+    margin: 18px auto 0;
+    padding: 14px 18px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    background: var(--vermelho-escuro);
+    border: 1px solid var(--mostarda);
+    color: var(--creme);
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 92%;
+        margin: 26px auto 40px;
+    }
+
+    #sobre figure img {
+        height: 220px;
+    }
+
+    #form-contato {
+        padding: 20px 16px;
+    }
+}
