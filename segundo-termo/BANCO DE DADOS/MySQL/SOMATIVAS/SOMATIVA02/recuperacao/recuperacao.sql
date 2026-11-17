@@ -1,4 +1,5 @@
 -- Active: 1794916744905@@localhost@3308@retrogame_pierre
+
 DROP DATABASE IF EXISTS RETROGAME_PIERRE;
 CREATE DATABASE RETROGAME_PIERRE;
 USE RETROGAME_PIERRE;
@@ -135,7 +136,7 @@ SELECT * FROM JOGO
 WHERE TITULO LIKE '%ZELDA%';
 
 SELECT TITULO, ANO_LANCAMENTO FROM JOGO
-WHERE ANO_LANCAMENTO BETWEEN 1990 AND 2005;
+WHERE ANO_LANCAMENTO BETWEEN 2020 AND 2024;
 
 SELECT
     COUNT(*) AS TOTAL_JOGOS,
@@ -181,5 +182,37 @@ FROM CLIENTE C
 LEFT JOIN LOCACAO L ON C.ID_CLIENTE = L.ID_CLIENTE
 GROUP BY C.ID_CLIENTE, C.NOME;
 
-DELETE FROM CLIENTE
-WHERE ID_CLIENTE = 1;
+-- fase 4
+start transaction;
+INSERT INTO LOCACAO (DATA_RETIRADA,DATA_PREVISTA,DATA_DEVOLUCAO,STATUS_LOCACAO,ID_CLIENTE,ID_JOGO) VALUES
+(NOW(),'2026-11-17',NULL,'ABERTA',4,4);
+UPDATE JOGO
+SET quantidade_disponivel = quantidade_disponivel - 1
+WHERE id_JOGO = 6;
+select id_JOGO, quantidade_disponivel from JOGO
+WHERE ID_JOGO = 6;
+COMMIT;
+
+select * from livro;
+
+start transaction;
+
+update JOGO
+set quantidade_disponivel = quantidade_disponivel + 100
+where id_JOGO = 6;
+select id_JOGO, quantidade_disponivel from JOGO
+WHERE ID_JOGO = 6;
+ROLLBACK;
+
+START TRANSACTION;
+UPDATE locacao
+SET STATUS_LOCACAO = 'DEVOLVIDA'
+WHERE ID_LOCACAO = 1;
+
+UPDATE jogo
+SET quantidade_disponivel = quantidade_disponivel + 1
+WHERE id_jogo = 6;
+
+select * from locacao;
+
+COMMIT;
