@@ -1,0 +1,150 @@
+.inicio {
+    /* background-color: aqua; */
+    background-image: linear-gradient(100deg, #4f46e5, #06b6d4);
+    display: flex;
+    border: 2px solid #4f46e5;
+    /* border-radius: 100px; */
+    height: 80px;
+    align-items: center;
+    /* justify-content: flex-end; */
+
+}
+
+body {
+  box-sizing: border-box;
+  /* background-image: linear-gradient(30deg, #4F46E5, #06B6D4); */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #eef2ff;
+}
+
+.inicio span {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+}
+
+.inicio a {
+    text-decoration: none;
+    list-style: none;
+}
+/* --------------------------------------- */
+.navegacao {
+    /* Transforma o elemento em um container flexível, permitindo alinhar os itens facilmente */
+    display: flex;
+
+    /* Remove decorações de texto (como o sublinhado de links). Obs: funciona melhor aplicado direto na tag <a> */
+    text-decoration: none;
+
+    /* Remove as bolinhas ou números padrão das listas (tags <ul> ou <ol>) */
+    list-style: none;
+
+    /* Define um espaçamento fixo de 48px entre cada item do menu */
+    gap: 48px;
+
+    /* Cria um espaçamento externo de 20px em todos os lados ao redor do menu */
+    margin: 20px;
+
+    /* Cria um espaçamento interno: 0px em cima, 20% nas laterais (direita/esquerda) e 20px embaixo */
+    padding: 0px 20% 20px;
+
+    /* Alinha os itens no início do eixo principal (neste caso, à esquerda) */
+    justify-content: flex-start;
+
+    /* Alinha os itens no início do eixo cruzado (neste caso, no topo) */
+    align-items: flex-start;
+
+    /* Alinha as linhas quando há quebra de linha no início do container (no topo) */
+    align-content: flex-start;
+
+    /* Permite que os itens quebrem para a linha de baixo caso não caibam na largura da tela */
+    /* flex-wrap: wrap; */
+
+    /* Define a direção principal dos itens como linha (um ao lado do outro na horizontal) */
+    flex-direction: row;
+}
+
+/* --------------------------------------------- */
+
+.conteudo-inicial {
+display: flex;
+background-color: #4f46e5;
+}
+
+.cartao-img {
+    padding: 12px;
+}
+
+.conteudo-art {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+img {
+    display: block;
+    width: 100%;
+    /* height: 80; */
+}
+
+.cartao-img:hover {
+    box-shadow: 0 10px 24px -8px rgba(15,23,42,35);
+    filter: blur(2px);
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(14px);
+    transform: translateX(120px) rotate(10deg);
+
+}
+
+.galeria-conteudo {
+    background-color: #4f46e5;
+    padding: 16px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.galeria-conteudo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.galeria-conteudo figure {
+    margin: 0;
+}
+
+.galeria-conteudo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+}
+
+.galeria-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.galeria-conteudo figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 8px 0;
+    color: #fff;
+    background-color: rgba(15, 23, 42, 0.75);
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+}
+
+.galeria-img:hover figcaption {
+    transform: translateY(0);
+}
+
