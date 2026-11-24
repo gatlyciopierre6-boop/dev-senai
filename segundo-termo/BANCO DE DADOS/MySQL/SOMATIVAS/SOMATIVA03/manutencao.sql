@@ -298,3 +298,124 @@ WHERE id_maquina = 3;
 ROLLBACK TO update1;
 
 COMMIT;
+
+USE sistema_manutencao;
+
+-- =====================================
+-- INDEX E EXPLAIN
+-- =====================================
+
+INSERT INTO ordem (descricao_problema, status_ordem, data_abertura, data_fechamento, prioridade)
+SELECT 'CARGA_TESTE',
+       CASE WHEN n MOD 10 = 0 THEN 'ABERTA'
+            WHEN n MOD 10 = 1 THEN 'EM ANDAMENTO'
+            WHEN n MOD 10 = 2 THEN 'CANCELADA'
+            ELSE 'CONCLUIDA' END,
+       DATE_ADD('2026-01-01', INTERVAL (n MOD 300) DAY),
+       NULL,
+       ELT(((n DIV 10) MOD 4) + 1, 'BAIXA', 'MEDIA', 'ALTA', 'URGENTE')
+  FROM (SELECT a.d + b.d*10 + c.d*100 + e.d*1000 AS n
+          FROM (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) b,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) c,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) e
+       ) nums;
+
+INSERT INTO manutencao (id_ordem, id_tecnico, tipo_manutencao, descricao, data_manutencao, custo, id_maquina)
+SELECT (n MOD 5) + 1,
+       (n MOD 5) + 1,
+       ELT((n MOD 2) + 1, 'Corretiva', 'Preventiva'),
+       'CARGA_TESTE',
+       DATE_ADD('2026-01-01', INTERVAL (n MOD 300) DAY),
+       100 + (n MOD 900),
+       (n MOD 5) + 1
+  FROM (SELECT a.d + b.d*10 + c.d*100 + e.d*1000 AS n
+          FROM (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) a,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) b,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) c,
+               (SELECT 0 d UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+                UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) e
+       ) nums;
+
+ANALYZE TABLE ordem, manutencao;
+
+-- =====================================
+-- CONSULTA 1: ordens urgentes em aberto
+-- =====================================
+
+-- EXPLAIN antes do índice
+EXPLAIN
+SELECT id_ordem, descricao_problema, data_abertura
+  FROM ordem
+ WHERE status_ordem = 'ABERTA'
+   AND prioridade = 'URGENTE';
+
+-- Índice
+CREATE INDEX idx_ordem_status_prioridade
+    ON ordem (status_ordem, prioridade);
+
+ANALYZE TABLE ordem;
+
+-- EXPLAIN depois do índice
+EXPLAIN
+SELECT id_ordem, descricao_problema, data_abertura
+  FROM ordem
+ WHERE status_ordem = 'ABERTA'
+   AND prioridade = 'URGENTE';
+
+-- =====================================
+-- CONSULTA 2: manutenções de um período
+-- =====================================
+
+-- EXPLAIN antes do índice
+EXPLAIN
+SELECT id_manutencao, descricao, data_manutencao, custo
+  FROM manutencao
+ WHERE data_manutencao BETWEEN '2026-11-01' AND '2026-11-30';
+
+-- Índice
+CREATE INDEX idx_manutencao_data
+    ON manutencao (data_manutencao);
+
+ANALYZE TABLE manutencao;
+
+-- EXPLAIN depois do índice
+EXPLAIN
+SELECT id_manutencao, descricao, data_manutencao, custo
+  FROM manutencao
+ WHERE data_manutencao BETWEEN '2026-11-01' AND '2026-11-30';
+
+-- =====================================
+-- CONSULTA 3: custo total por máquina
+-- =====================================
+
+-- EXPLAIN antes do índice
+EXPLAIN
+SELECT maquina.nome, SUM(manutencao.custo) AS custo_total
+  FROM manutencao
+  JOIN maquina ON manutencao.id_maquina = maquina.id_maquina
+ GROUP BY maquina.nome;
+
+-- Índice
+CREATE INDEX idx_manutencao_maquina_custo
+    ON manutencao (id_maquina, custo);
+
+ANALYZE TABLE manutencao;
+
+-- EXPLAIN depois do índice
+EXPLAIN
+SELECT maquina.nome, SUM(manutencao.custo) AS custo_total
+  FROM manutencao
+  JOIN maquina ON manutencao.id_maquina = maquina.id_maquina
+ GROUP BY maquina.nome;
+
+-- Conferir os índices criados
+SHOW INDEX FROM ordem;
+SHOW INDEX FROM manutencao;
