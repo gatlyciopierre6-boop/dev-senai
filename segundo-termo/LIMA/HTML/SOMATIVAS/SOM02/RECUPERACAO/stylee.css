@@ -1,112 +1,276 @@
+
+:root {
+    --roxo: rgb(69, 69, 129);
+    --noite: #14142e;
+    --ciano: #22d3ee;
+    --vermelho: #c42b2b;
+    --branco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--noite);
+    color: var(--branco);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Cambria, Georgia, serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Cabeçalho ---------- */
 .cabecalho {
-    background-color: rgb(69, 69, 129);
+    background-color: var(--roxo);
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
     border-bottom: 2px solid #e63939;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-/* .cabecalho h2 {
-   
-} */
+.cabecalho h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 .cabecalho ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-.cabecalho nav a:hover,
-.redes a:hover {
-    color: #e63939;
+.cabecalho nav a {
+    color: var(--branco);
+    text-decoration: none;
 }
 
+.cabecalho li + li::before {
+    content: "|";
+    color: var(--ciano);
+    margin-right: 20px;
+}
+
+.cabecalho nav a:hover {
+    color: var(--ciano);
+}
+
+/* ---------- Banner ---------- */
 .inicio {
-    padding: 20px;
-    background-color: cornflowerblue;
+    padding: 32px 20px;
+    background-color: var(--roxo);
     margin: 20px;
     border-radius: 30px;
-}
-
-.inicio h2, .inicio h5, .inicio p{
-    display: flex;
-    justify-content: center;
-    margin: 4px;
-    font-size: 18px;
-    color: var(--Branco);
-}
-
-.inicio img {
-    display: block;
-    width: 50%;
-    border-radius: 12px;
-    height: 287px;
-    margin: auto;
-}
-
-.inicio button {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   background-color: blue;
-    color: var(--Branco);
-}
-
-.inicio a {
-    text-decoration: none;
-    list-style: none;
-    color: var(--Branco);
-}
-
-.sec-img {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.cards img{
-    width: 50%;
-    height: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    border: var(--VerdeSálvia) solid 2px;
-    margin-bottom: 12px;
-}
-
-.cards-fundo {
-    background-color: #ffffff;
-    padding: 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 4px;
+    gap: 10px;
+}
+
+.inicio h1 {
+    font-size: 2.4rem;
+}
+
+.inicio h3 {
+    color: var(--ciano);
+}
+
+.inicio p {
+    max-width: 620px;
+}
+
+.inicio img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+.botao {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 32px;
+    border-radius: 10px;
+}
+
+.botao:hover {
+    background-color: #a82222;
+}
+
+/* ---------- Cards de atrações ---------- */
+.sec-img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 0 20px 15px;
+}
+
+.sec-img figcaption {
+    opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sec-img:hover figcaption {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.titulo-secao {
+    grid-column: 1 / -1;
+    border-left: 6px solid var(--ciano);
+    padding-left: 12px;
+}
+
+.cards-fundo {
+    background-color: var(--branco);
+    color: #1b1b2f;
     border: #10462f solid 2px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-    .caixas {
-        grid-template-columns: 1fr;
-    }
+.cards-fundo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
+.cards-fundo figcaption {
+    padding: 15px;
+    text-align: center;
+}
 
+.categoria {
+    display: inline-block;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+/* ---------- Programação e Sobre ---------- */
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 0 20px 30px;
+}
+
+.bloco {
+    background-color: var(--roxo);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.bloco h2 {
+    margin-bottom: 12px;
+    border-left: 6px solid var(--ciano);
+    padding-left: 12px;
+}
+
+.bloco p + p {
+    margin-top: 10px;
+}
+
+.horarios {
+    list-style: none;
+}
+
+.horarios li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.horarios li:last-child {
+    border-bottom: none;
+}
+
+.horarios time {
+    display: inline-block;
+    min-width: 62px;
+    font-weight: bold;
+    color: var(--ciano);
+}
+
+/* ---------- Rodapé ---------- */
 footer {
-      background-color: rgb(69, 69, 129);
+    background-color: var(--roxo);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid #e63939;
+}
+
+footer h2 {
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin-bottom: 4px;
+}
+
+footer a {
+    color: var(--ciano);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 900px) {
+    .sec-img {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .inicio h1 {
+        font-size: 1.8rem;
+    }
+
+    .cabecalho ul {
+        justify-content: center;
+        gap: 8px 16px;
+    }
+
+    .cabecalho li + li::before {
+        content: none;
+    }
+
+    .sec-img,
+    .box {
+        grid-template-columns: 1fr;
+    }
 }
