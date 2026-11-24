@@ -254,3 +254,47 @@ DELETE FROM ordem
 DELETE FROM maquina
  WHERE id_maquina = 6
    AND status_maquina = 'INATIVA';
+
+-- DQL
+
+-- Listar as manutenções realizadas
+
+SELECT manutencao.descricao, tecnico.nome AS tecnico, maquina.nome AS maquina FROM manutencao
+JOIN tecnico
+    ON manutencao.id_tecnico = tecnico.id_tecnico
+JOIN maquina
+    ON manutencao.id_maquina = maquina.id_maquina;
+
+-- Consultar ordens em aberto
+
+SELECT * FROM ordem
+WHERE status_ordem = 'ABERTA'
+   OR status_ordem = 'EM ANDAMENTO';
+
+-- Consultar custo das manutenções por máquina
+
+SELECT maquina.nome, SUM(manutencao.custo) AS custo_total FROM manutencao
+JOIN maquina
+    ON manutencao.id_maquina = maquina.id_maquina
+GROUP BY maquina.nome;
+-- =====================================
+-- TCL
+-- =====================================
+START TRANSACTION;
+
+INSERT INTO manutencao (tipo_manutencao, descricao, data_manutencao, custo, id_ordem, id_tecnico, id_maquina)
+VALUES ('Corretiva', 'Troca de rolamento', CURDATE(), 450.00, 1, 2, 3);
+
+UPDATE ordem
+SET status_ordem = 'concluida', data_fechamento = CURDATE()
+WHERE id_ordem = 1;
+
+SAVEPOINT update1;
+
+UPDATE maquina
+SET status_maquina = 'ativa'
+WHERE id_maquina = 3;
+
+ROLLBACK TO update1;
+
+COMMIT;
