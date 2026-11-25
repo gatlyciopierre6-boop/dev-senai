@@ -78,48 +78,56 @@ img {
 
 /* ---------- Banner ---------- */
 .inicio {
-    padding: 32px 20px;
-    background-color: var(--roxo);
-    margin: 20px;
-    border-radius: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    column-gap: 40px;
+    padding: 60px 8%;
 }
 
-.inicio h1 {
-    font-size: 2.4rem;
+.inicio h2 {
+    grid-column: 1;
+    align-self: end;
+    font-size: 38px;
+    font-weight: 400;
+    margin: 10px 0;
+    line-height: 1.15;
 }
 
-.inicio h3 {
-    color: var(--ciano);
+.inicio h5 {
+    grid-column: 1;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
-.inicio p {
-    max-width: 620px;
+.inicio .botao {
+    grid-column: 1;
+    justify-self: start;
+    align-self: start;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .inicio img {
+    grid-column: 2;
+    grid-row: 1 / span 3;
     width: 100%;
-    max-width: 640px;
-    border-radius: 12px;
-    margin: 10px 0;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    align-self: center;
+}
+.botao:hover {
+    background-color: #a82222;
 }
 
 .botao {
-    background-color: var(--vermelho);
-    color: var(--branco);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 12px 32px;
-    border-radius: 10px;
-}
-
-.botao:hover {
-    background-color: #a82222;
+    background-color: var(--branco);
 }
 
 /* ---------- Cards de atrações ---------- */
